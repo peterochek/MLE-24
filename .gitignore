@@ -1,0 +1,5 @@
+mlruns
+.dvc
+*.pyc
+data
+models
