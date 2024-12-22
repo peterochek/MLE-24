@@ -1,10 +1,11 @@
-import mlflow
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
+
+from artifacts import log_mlflow_experiment
 
 
 def train_models(input_path, model_output_path):
@@ -34,9 +35,4 @@ def train_models(input_path, model_output_path):
 
             pickle.dump(model, f)
 
-        with mlflow.start_run(run_name=name):
-            mlflow.log_param("model", name)
-            mlflow.log_metric("accuracy", accuracy)
-            mlflow.log_artifact(
-                f"{model_output_path}/{name.replace(' ', '_').lower()}.pkl"
-            )
+        log_mlflow_experiment(name, accuracy, model_output_path)
