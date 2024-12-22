@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-from artifacts import log_mlflow_experiment
+from src.artifacts import log_mlflow_experiment
 
 
 def train_models(input_path, model_output_path):
