@@ -1,5 +1,5 @@
 import mlflow
-from mlflow import log_metric, log_param, log_artifact
+from mlflow import log_artifact, log_metric, log_param
 
 
 def log_mlflow_experiment():

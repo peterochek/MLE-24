@@ -1,12 +1,10 @@
 import mlflow
 import pandas as pd
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
-
 from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.metrics import classification_report
+from sklearn.tree import DecisionTreeClassifier
 
 
 def train_models(input_path, model_output_path):
